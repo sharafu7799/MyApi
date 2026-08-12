@@ -13,7 +13,9 @@ steps:
 - script: dotnet restore
   displayName: Restore
 
-- script: dotnet clean
+- script: |
+    rm -rf bin obj
+    dotnet clean --configuration Release
   displayName: Clean
 
 - script: dotnet build --configuration Release
