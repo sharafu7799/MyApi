@@ -1,0 +1,30 @@
+# Build results
+bin/
+obj/
+.vs/
+.vscode/
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Visual Studio cache/options
+.vs/
+
+# Rider
+.idea/
+*.sln.iml
+
+# NuGet
+*.nupkg
+*.nuget.props
+*.nuget.targets
+
+# Publish
+publish/
+
+# Environment
+.env
+.env.local
