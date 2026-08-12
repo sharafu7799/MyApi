@@ -1,0 +1,7 @@
+C:\Users\shara\MyApi\publish\MyApi.exe
+C:\Users\shara\MyApi\publish\appsettings.Development.json
+C:\Users\shara\MyApi\publish\appsettings.json
+C:\Users\shara\MyApi\publish\MyApi.dll
+C:\Users\shara\MyApi\publish\MyApi.deps.json
+C:\Users\shara\MyApi\publish\MyApi.runtimeconfig.json
+C:\Users\shara\MyApi\publish\MyApi.pdb
