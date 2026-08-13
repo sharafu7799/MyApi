@@ -10,13 +10,13 @@ steps:
     packageType: 'sdk'
     version: '10.0.x'
 
-- script: dotnet restore
-  displayName: Restore
-
 - script: |
-    rm -rf bin obj
+    rm -rf bin obj publish
     dotnet clean --configuration Release
   displayName: Clean
+
+- script: dotnet restore
+  displayName: Restore
 
 - script: dotnet build --configuration Release
   displayName: Build
