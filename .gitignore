@@ -25,6 +25,15 @@ obj/
 # Publish
 publish/
 
+# Build outputs
+*.dll
+*.exe
+*.pdb
+*.deps.json
+*.runtimeconfig.json
+*.staticwebassets.endpoints.json
+web.config
+
 # Environment
 .env
 .env.local
