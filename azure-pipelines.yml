@@ -1,3 +1,13 @@
+parameters:
+- name: branchName
+  displayName: Branch Name
+  type: string
+  values:
+    - main
+    - develop
+    - staging
+  default: main
+
 trigger:
 - main
 
@@ -20,11 +30,24 @@ steps:
 
 - script: |
     rm -rf bin/Release/net10.0/MyApi
+    echo "Building from branch: ${{ parameters.branchName }}"
     dotnet build --configuration Release
   displayName: Build
 
 - script: dotnet publish --configuration Release --output $(Build.ArtifactStagingDirectory)
   displayName: Publish
+
+- script: echo "Deploying to PRODUCTION from main branch"
+  condition: eq('${{ parameters.branchName }}', 'main')
+  displayName: Production Deployment
+
+- script: echo "Deploying to STAGING from develop branch"
+  condition: eq('${{ parameters.branchName }}', 'develop')
+  displayName: Development Deployment
+
+- script: echo "Deploying to STAGING environment"
+  condition: eq('${{ parameters.branchName }}', 'staging')
+  displayName: Staging Deployment
 
 - task: PublishBuildArtifacts@1
   inputs:
